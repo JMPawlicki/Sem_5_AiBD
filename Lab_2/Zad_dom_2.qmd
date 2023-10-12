@@ -1,0 +1,13 @@
+---
+title: "Przykładowa prezentacja"
+author: Janusz Pawlicki
+format: pptx
+---
+
+# Mona Lisa
+
+Mona Lisa (wł. Gioconda) – obraz olejny namalowany na topolowej desce przez Leonarda da Vinci, artystę włoskiego renesansu. Jego nazwa pochodzi od słowa mona, które w dialekcie toskańskim jest skrótem od tytułu ma donna („moja pani”) oraz imienia domniemanego tematu portretu, zaś we wł. i hiszp. znany jest jako La Gioconda, a we fr. La Joconde, od nazwy rodu kupca zamawiającego to dzieło. źródło: Wikipedia - Mona Lisa
+
+# Obraz
+
+![Mona Lisa](Mona_Lisa.png)

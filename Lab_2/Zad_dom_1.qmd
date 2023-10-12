@@ -1,0 +1,20 @@
+---
+title: "Wzór na funkcję gęstości prawdopodobieństwa rozkładu Gaussa"
+output:
+  pdf_document: default
+editor: visual
+---
+
+# Funkcja gęstości prawdopodobieństwa rozkładu Gaussa
+
+Rozkład Gaussa (inaczej nazywany rozkładem normalnym) jest powszechnie używany w statystyce i analizie danych. Jego funkcja gęstości prawdopodobieństwa jest dana wzorem:
+
+$$
+f_{\mu, \sigma}(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+
+gdzie:
+
+- \( x \) to zmienna losowa,  
+- \( $\mu$ ) to średnia rozkładu,  
+- \( $\sigma$ ) to odchylenie standardowe.  

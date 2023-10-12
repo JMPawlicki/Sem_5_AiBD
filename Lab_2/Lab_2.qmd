@@ -1,0 +1,23 @@
+---
+title: "Data Frame Example"
+format:
+    html:
+      code-fold: true
+      df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+
+df <- data.frame(
+  Imię = c("Jan", "Ola", "Ela"),
+  Wiek = c(25, 30, 28),
+  Punkty = c(85, 92, 78),
+  Ocena = c("4+", "5", "4")
+)
+
+rmarkdown::paged_table(head(df))
+```
