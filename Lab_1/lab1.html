@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>lab1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="lab1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lab1_files/libs/quarto-html/quarto.js"></script>
+<script src="lab1_files/libs/quarto-html/popper.min.js"></script>
+<script src="lab1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="lab1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="lab1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lab1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="lab1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="lab1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="lab1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="wprowadzenie-do-programowania-w-języku" class="level1">
+<h1>Wprowadzenie do programowania w języku</h1>
+<p><strong>Czas ćwiczenia:</strong> 90 minut</p>
+<p><strong>Cel:</strong> Zapoznanie studentów z podstawami języka programowania R i pomoc w zbudowaniu podstawowego zrozumienia kluczowych pojęć.</p>
+<section id="wprowadzenie" class="level2">
+<h2 class="anchored" data-anchor-id="wprowadzenie">Wprowadzenie:</h2>
+<p>Język R to otwarty język programowania i środowisko do analizy danych. Jego zalety to bogata biblioteka pakietów, umożliwiająca zaawansowaną analizę statystyczną i wizualizację danych. R jest bezpłatny, co obniża koszty projektów. Dodatkowo, posiada silne wsparcie społeczności oraz akademickie i jest dostępny na różne platformy, co czyni go popularnym narzędziem w dziedzinie analizy danych.</p>
+</section>
+<section id="podstawowe-pojęcia" class="level2">
+<h2 class="anchored" data-anchor-id="podstawowe-pojęcia">Podstawowe pojęcia</h2>
+<p>W języku R, operatory przypisania <code>'&lt;-'</code> i <code>'='</code> służą do przypisywania wartości do zmiennych, ale różnią się w kontekście ich użycia:</p>
+<ol type="1">
+<li><strong>Operator przypisania <code>'='</code></strong>: Ten operator jest często używany w innych językach programowania. Przypisuje on wartość po prawej stronie do zmiennej po lewej stronie. Możesz go używać do przypisywania wartości pojedynczych zmiennych lub wektorów. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Operator przypisania <code>'&lt;-'</code></strong>: Ten operator jest charakterystyczny dla języka R. Działa on również jak operator <code>'='</code>, przypisując wartość po prawej stronie do zmiennej po lewej stronie. Jest bardziej zalecany w środowisku R, ponieważ jest bardziej konsekwentny z konwencją używaną w R. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Oba operatory przypisania mogą być stosowane zamiennie w większości przypadków, ale <code>&lt;-</code> jest bardziej powszechnie używane i zalecane w środowisku R ze względu na konsekwencję z innymi konstrukcjami języka.</p>
+<p>W języku R istnieje kilka podstawowych typów danych:</p>
+<ol type="1">
+<li><strong>Liczby całkowite (integer)</strong>: Reprezentują liczby całkowite. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>liczba_cal <span class="ot">=</span> <span class="dv">42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Liczby zmiennoprzecinkowe (numeric)</strong>: Reprezentują liczby zmiennoprzecinkowe. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>liczba_zmien <span class="ot">=</span> <span class="fl">3.14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Tekst (character)</strong>: Reprezentuje ciągi znaków. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tekst <span class="ot">=</span> <span class="st">"To jest przykład"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li><strong>Logiczne (logical)</strong>: Reprezentuje wartości logiczne <code>TRUE</code> lub <code>FALSE</code>. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>logiczna_wart <span class="ot">=</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li><strong>Czynniki (factor)</strong>: Reprezentuje zmienne jakościowe. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>czynnik <span class="ot">=</span> <span class="fu">factor</span>(<span class="st">"Kategoria A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Te podstawowe typy danych pozwalają na przechowywanie i manipulację różnymi rodzajami informacji w języku R.</p>
+</section>
+<section id="wektory" class="level2">
+<h2 class="anchored" data-anchor-id="wektory">Wektory</h2>
+<p>Wektory są fundamentalnymi strukturami danych w języku R i służą do przechowywania sekwencji wartości. Wektory w R mogą zawierać elementy tego samego typu danych, co oznacza, że można tworzyć wektory liczb całkowitych, zmiennoprzecinkowych, znaków itp. Poniżej opisane są podstawowe operacje dotyczące tworzenia i manipulowania wektorami:</p>
+<p><strong>Tworzenie wektorów:</strong></p>
+<ol type="1">
+<li><strong>Funkcja <code>c()</code>:</strong> Najczęściej używana do tworzenia wektorów. Można jej użyć do łączenia elementów w jeden wektor. Przykłady:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>liczby <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>) <span class="co"># Wektor liczb całkowitych</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>teksty <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"jabłko"</span>, <span class="st">"banan"</span>, <span class="st">"gruszka"</span>) <span class="co"># Wektor tekstów</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Funkcja <code>seq()</code>:</strong> Służy do generowania sekwencji liczb. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sekwencja <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>) <span class="co"># Generuje sekwencję 1, 3, 5, 7, 9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Funkcja <code>rep()</code>:</strong> Używana do powtarzania wartości w wektorze. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>powtorzenia <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times =</span> <span class="dv">5</span>) <span class="co"># Powiela 0 pięć razy: 0, 0, 0, 0, 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Manipulowanie wektorami:</strong></p>
+<ol type="1">
+<li><strong>Indeksowanie:</strong> Elementy wektora można uzyskać za pomocą indeksów. Indeksy w R zaczynają się od 1. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>liczby[<span class="dv">3</span>] <span class="co"># Zwraca trzeci element z wektora 'liczby'.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Podstawianie wartości:</strong> Można zmieniać wartości w wektorze, przypisując im nowe wartości. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>liczby[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># Zamienia drugi element 'liczby' na 10.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Łączenie wektorów:</strong> Wektory można łączyć za pomocą operatora <code>c()</code>. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>nowy_wektor <span class="ot">&lt;-</span> <span class="fu">c</span>(liczby, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>) <span class="co"># Łączy 'liczby' z nowymi wartościami.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li><strong>Filtrowanie i subsetting:</strong> Używając warunków logicznych, można wybierać elementy spełniające określone kryteria. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>liczby[liczby <span class="sc">&gt;</span> <span class="dv">3</span>] <span class="co"># Zwraca elementy 'liczby' większe od 3.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wektory są kluczowymi elementami w analizie danych w R, a znajomość sposobów tworzenia i manipulowania nimi jest niezbędna do skutecznej pracy z danymi w tym języku.</p>
+<p><strong>Ćwiczenie 1: Tworzenie wektorów:</strong></p>
+<p>Utwórz wektor następujących wartości: <code>5, 10, 15, 20, 25</code></p>
+<p>Wykonaj następujące operacje: - Wybierz wartości większe niż 15 - Policz średnią z wektora - Policz sumę&nbsp;pierwszych trzech elementów</p>
+</section>
+<section id="struktury-sterujące" class="level2">
+<h2 class="anchored" data-anchor-id="struktury-sterujące">Struktury sterujące</h2>
+<section id="warunek-if" class="level3">
+<h3 class="anchored" data-anchor-id="warunek-if">Warunek <code>if</code></h3>
+<p>W języku R, instrukcja warunkowa <code>if</code> służy do wykonywania określonego bloku kodu tylko wtedy, gdy określony warunek jest spełniony (prawdziwy). Instrukcja <code>if</code> ma następującą ogólną składnię:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (warunek) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Kod do wykonania, gdy warunek jest prawdziwy</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>warunek</code> to wyrażenie logiczne, które może przyjąć wartość <code>TRUE</code> lub <code>FALSE</code>.</li>
+<li>Blok kodu wewnątrz nawiasów klamrowych <code>{}</code> zostanie wykonany tylko wtedy, gdy <code>warunek</code> jest spełniony (czyli ma wartość <code>TRUE</code>).</li>
+</ul>
+<p>Przykład:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"x jest większe niż 3.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>W powyższym przykładzie, jeśli zmienna <code>x</code> jest większa niż 3, to komunikat “x jest większe niż 3.” zostanie wyświetlony.</p>
+<p>Można także używać instrukcji <code>if</code> w połączeniu z instrukcjami <code>else</code> i <code>else if</code>, aby obsłużyć różne scenariusze warunkowe. Na przykład:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">10</span>) {</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"x jest większe niż 10.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"x jest większe niż 5, ale nie większe niż 10.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"x nie jest większe niż 5.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>W tym przypadku zostanie wykonany odpowiedni blok kodu w zależności od wartości <code>x</code>. Instrukcja <code>else</code> obsługuje przypadki, gdy żaden z wcześniejszych warunków nie jest spełniony.</p>
+</section>
+<section id="pętla-for" class="level3">
+<h3 class="anchored" data-anchor-id="pętla-for">Pętla <code>for</code></h3>
+<p>Pętla <code>for</code> w języku R służy do iteracji (powtarzania) przez sekwencję wartości, na przykład sekwencję liczb, elementy wektora lub inne obiekty. W każdym przebiegu pętli, zmienna iteracyjna przyjmuje jedną z wartości z sekwencji, a określony blok kodu jest wykonany. Ogólna składnia pętli <code>for</code> w R wygląda następująco:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (zmienna_iteracyjna <span class="cf">in</span> sekwencja) {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Blok kodu do wykonania w każdym przebiegu</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>zmienna_iteracyjna</code> to zmienna, która przechowuje aktualną wartość z sekwencji w danym przebiegu pętli.</li>
+<li><code>sekwencja</code> to obiekt, przez który pętla będzie iterować, na przykład wektor liczb, lista, czy wynik funkcji generującej sekwencję.</li>
+</ul>
+<p>Przykład pętli <code>for</code> iterującej przez wektor liczb i wyświetlającej ich kwadraty:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>liczby <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (liczba <span class="cf">in</span> liczby) {</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  kwadrat <span class="ot">&lt;-</span> liczba<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Kwadrat"</span>, liczba, <span class="st">"to"</span>, kwadrat, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>W wyniku tego kodu zostaną wyświetlone kwadraty liczb od 1 do 5.</p>
+<p><strong>Ćwiczenie 2: Instrukcje warunkowe:</strong> Masz listę wyników egzaminów. Napisz kod R, aby sprawdzić, czy każdy wynik jest pozytywny (większy lub równy 60), czy negatywny (mniejszy niż 60). Wypisz odpowiednio „Zaliczony” lub „Niezaliczony”.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista wynikow egzaminu</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>wyniki <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">75</span>, <span class="dv">48</span>, <span class="dv">90</span>, <span class="dv">60</span>, <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="data-frame">Data Frame</h2>
+<p>DataFrame to podstawowa struktura danych w języku R, służąca do przechowywania i zarządzania danymi w formie tabelarycznej, gdzie dane są zorganizowane w kolumny i wiersze. Każda kolumna może zawierać różne typy danych (liczby, tekst, itp.), ale wszystkie kolumny w ramce danych muszą mieć taką samą liczbę wierszy.</p>
+<p>Tworzenie data frame w R można zrobić na kilka sposobów:</p>
+<ol type="1">
+<li><strong>Funkcja <code>data.frame()</code>:</strong> Najczęściej używana metoda. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie data frame z trzema kolumnami</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  Imię <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Anna"</span>, <span class="st">"Jan"</span>, <span class="st">"Karolina"</span>),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Wiek =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">28</span>),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  Płeć <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Kobieta"</span>, <span class="st">"Mężczyzna"</span>, <span class="st">"Kobieta"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Konwersja innych struktur danych:</strong> Istnieją inne struktury danych w R, takie jak wektory, które można przekształcić w data frame. Przykład:</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wektorów</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>imiona <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Anna"</span>, <span class="st">"Jan"</span>, <span class="st">"Karolina"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>wiek <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">28</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Kobieta"</span>, <span class="st">"Mężczyzna"</span>, <span class="st">"Kobieta"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Konwersja na data frame</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Imię <span class="ot">=</span> imiona, <span class="at">Wiek =</span> wiek, Płeć <span class="ot">=</span> plec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Importowanie danych z pliku:</strong> Można wczytać dane z plików zewnętrznych, takich jak CSV lub Excel, tworząc data frame. Na przykład:</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importowanie danych z pliku CSV</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"nazwa_pliku.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Data frame’y są często używane w analizie danych, ponieważ pozwalają na łatwą manipulację, filtrowanie, agregację i wizualizację danych w formie tabelarycznej. Dzięki nim możliwe jest przetwarzanie i badanie różnych aspektów danych w R.</p>
+<p><strong>Ćwiczenie 3: Tworzenie i manipulacja data frameami</strong></p>
+<p>Wykorzystując zbiór danych:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Imię</th>
+<th style="text-align: center;">Wiek</th>
+<th style="text-align: center;">Punkty</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Jan</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">85</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ola</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ela</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">78</td>
+</tr>
+</tbody>
+</table>
+<p>Utwórz data frame z danych w tej tabeli - dodaj kolumnę “Ocena” wyliczaną zgodnie ze skalą&nbsp;AGH - wyfiltruj dane do osób z wiekiem poniżej 30 lat.</p>
+</section>
+<section id="wizualizacja-danych" class="level2">
+<h2 class="anchored" data-anchor-id="wizualizacja-danych">Wizualizacja danych</h2>
+<section id="biblioteki" class="level3">
+<h3 class="anchored" data-anchor-id="biblioteki">Biblioteki</h3>
+<p>Ładowanie i instalowanie bibliotek (pakietów) w języku R jest kluczowym procesem, ponieważ pozwala ono na korzystanie z dodatkowych funkcji i narzędzi dostępnych w tych bibliotekach. Oto kroki do ładowania i instalowania bibliotek w R:</p>
+<p><strong>Instalowanie bibliotek:</strong></p>
+<ol type="1">
+<li><p><strong>Instalacja z CRAN (Comprehensive R Archive Network):</strong> Aby zainstalować bibliotekę z CRAN, można użyć funkcji <code>install.packages()</code>. Na przykład, aby zainstalować pakiet <code>ggplot2</code>, wpisz:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R pobierze i zainstaluje pakiet oraz jego zależności.</p></li>
+<li><p><strong>Instalacja z innych źródeł:</strong> Niektóre pakiety mogą być dostępne z innych źródeł niż CRAN, takie jak GitHub. Wtedy można użyć funkcji <code>devtools::install_github()</code>. Przykład:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"nazwa_uzytkownika/nazwa_repozytorium"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+<p><strong>Ładowanie bibliotek:</strong></p>
+<p>Po zainstalowaniu biblioteki, aby ją użyć w bieżącej sesji R, należy ją załadować za pomocą funkcji <code>library()</code> lub <code>require()</code>. Przykład:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>lub</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R załaduje bibliotekę i umożliwi korzystanie z jej funkcji i obiektów w bieżącej sesji. Jeśli biblioteka jest już załadowana, ponowne jej załadowanie nie spowoduje błędów.</p>
+<p>Warto również pamiętać, że niektóre pakiety mogą wymagać wcześniejszej instalacji innych zależności. R będzie informować o tym podczas instalacji i wskaże, jakie pakiety należy jeszcze zainstalować.</p>
+<p>Za pomocą tych prostych kroków można instalować i ładować różne biblioteki w R, co pozwala na korzystanie z różnorodnych funkcji i rozszerza możliwości analizy danych oraz tworzenia wizualizacji.</p>
+</section>
+<section id="wprowadzenie-do-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="wprowadzenie-do-ggplot2">Wprowadzenie do <code>ggplot2</code></h3>
+<p><strong>Wprowadzenie do pakietu ggplot2 w R</strong></p>
+<p>Pakiet ggplot2 jest jednym z najpotężniejszych narzędzi do tworzenia wizualizacji danych w języku R. Opracowany przez Hadley Wickhama, ggplot2 bazuje na koncepcji “Grammar of Graphics” i pozwala na tworzenie wyjątkowych i estetycznych wykresów w prosty sposób.</p>
+<p><strong>Korzyści z korzystania z ggplot2:</strong></p>
+<ol type="1">
+<li><p><strong>Zrozumienie składni:</strong> ggplot2 opiera się na zrozumiałej składni opisującej wykresy, co ułatwia tworzenie nawet zaawansowanych wizualizacji.</p></li>
+<li><p><strong>Dostosowywanie wykresów:</strong> ggplot2 umożliwia dokładne dostosowanie wykresów, w tym zmianę kolorów, etykiet, skal, itp.</p></li>
+<li><p><strong>Wizualna spójność:</strong> Wykresy tworzone za pomocą ggplot2 są estetycznie przyjemne i mają spójny wygląd.</p></li>
+</ol>
+<p><strong>Tworzenie wykresów słupkowych w ggplot2:</strong></p>
+<p>Wykresy słupkowe są używane do prezentowania danych kategorialnych w formie kolumn lub słupków. W ggplot2 można je tworzyć za pomocą funkcji <code>geom_bar()</code>. Oto przykład tworzenia prostego wykresu słupkowego z użyciem ggplot2:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalacja i ładowanie ggplot2 (jeśli jeszcze nie jest zainstalowane)</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2")</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Kategoria =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  Wartość <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">20</span>, <span class="dv">55</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu słupkowego</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>wykres_slupkowy <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Kategoria, <span class="at">y =</span> Wartość)) <span class="sc">+</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Wykres Słupkowy"</span>,</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Kategoria"</span>,</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Wartość"</span>)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie wykresu</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wykres_slupkowy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ten kod tworzy wykres słupkowy, gdzie na osi X są wyświetlane kategorie, a na osi Y wartości. <code>geom_bar()</code> jest używany do stworzenia słupków, a <code>fill</code> określa kolor wypełnienia słupków.</p>
+<p>To tylko krótka próbka możliwości pakietu ggplot2 w tworzeniu wykresów słupkowych. Pakiet ten oferuje wiele opcji dostosowywania, pozwalając na tworzenie wykresów dostosowanych do specyficznych potrzeb analizy danych.</p>
+<p><strong>Ćwiczenie 4: Wizualizacja danych</strong></p>
+<p>Wykorzystując dane o średnim wyniku z zaliczenia:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Przedmiot</th>
+<th style="text-align: center;">Średnia</th>
+<th style="text-align: center;">Rocznik</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Analiza i Bazy Danych</td>
+<td style="text-align: center;">71</td>
+<td style="text-align: center;">2022</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Metody numeryczne</td>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">2022</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Eksploracja danych</td>
+<td style="text-align: center;">89</td>
+<td style="text-align: center;">2022</td>
+</tr>
+</tbody>
+</table>
+<p>Przygotuj wykres słupkowy dla rocznika 2022. Wykres ma mieć tytuł i odpowiednio opisane osie.</p>
+</section>
+</section>
+<section id="zadanie-domowe" class="level2">
+<h2 class="anchored" data-anchor-id="zadanie-domowe">Zadanie domowe</h2>
+<p><strong>Zadanie domowe: Powtórka</strong></p>
+<p>Załóżmy, że masz dane dotyczące wyników testu dwóch grup studentów (Grupa A i Grupa B) w dwóch przedmiotach (Matematyka i Historia). Twoim zadaniem jest stworzenie wykresu słupkowego, który przedstawi średnie wyniki testów z Matematyki dla obu grup. Jednakże, jeśli średni wynik Grupy A w Matematyce jest niższy niż 70, to wynik tej grupy nie powinien być uwzględniony w wykresie i powinien wyświetlony odpowiedni komunikat.</p>
+<p><strong>Dodatkowe wskazówki:</strong></p>
+<ul>
+<li>Przetestuj swój kod dla następujących zbiorów danych:</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test 1 Wyniki testów Matematyki dla Grupy A i Grupy B</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>wyniki_grupa_A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">75</span>, <span class="dv">68</span>, <span class="dv">62</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>wyniki_grupa_B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Test 2 Wyniki testów Matematyki dla Grupy A i Grupy B</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>wyniki_grupa_A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">65</span>, <span class="dv">75</span>, <span class="dv">68</span>, <span class="dv">72</span>)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>wyniki_grupa_B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Możesz użyć funkcji <code>mean()</code> do obliczenia średniej.</li>
+<li>Do stworzenia wykresu słupkowego użyj pakietu ggplot2 i funkcji <code>geom_bar()</code>. Możesz dostosować wygląd wykresu, dodając tytuł i etykiety osi.</li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
